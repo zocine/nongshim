@@ -41,5 +41,28 @@ $(document).ready(function(){
       controls:false,
       pager:false
     })
-  
+
+    $(window).scroll(function(){
+      // 스크롤 위치가 특정값이 되었을때, 탑버튼이 보이거나
+      // 보이지 않도록 설정.
+      if($(this).scrollTop()>900){
+        $(".topbtn").fadeIn()
+      } else{
+        $(".topbtn").fadeOut()
+      }
+    })
+    // console.log($(window).scrollTop())
+    // 위의 값 확인용
+    
+    $(".topbtn").click(function(){
+      /* $("html,body").scrollTop(0) 
+      // animation이 보이지 않고 바로 올라가게 함 */
+      $('html,body').animate({
+        scrollTop:0 //문서의 최상단
+        // scrollTop:$(document).height()//문서의 최하단\
+                // 문서의 세로 값
+      })
+    })
+    // scrollTop() : 메서드 - 스크롤 바의 윗부분
+    // scrollTop :css속성 - 스크롤 영역의 윗부분
 })

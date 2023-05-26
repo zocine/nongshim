@@ -171,23 +171,33 @@ section h3{
     padding-bottom: 20px;
 }
 
+/* 농꾸&출첵 */
 #content1{
     display: flex;
     padding: 0 1rem;
     margin: 1.5rem auto;
 }
+#content1 .cont1left{
+    margin-bottom: 1rem;
+    width: 810px;
+    height: 453px;
+    background: url("../img/section1.jpg") center no-repeat;
+}
 #content1 .cont1right{
+    /* border: 1px solid red; */
     position: relative;
     margin-left: 1%;
-    width: 100%;
+    width: 475px;
+    height: 453px;
     overflow: hidden;
     /* hover하면서 커진 배경이미지가 잘려서 보이도록 */
     font-family: 'MBC1961GulimM';
 }
 #content1 .cont1right .contBg{
+    /* border: 1px solid red; */
     background: url("../img/section2.jpg") ;
     background-size: cover;
-    width: 100%;
+    width: 475px;
     height: 453px;
     transition: .5s;
 }
@@ -363,7 +373,7 @@ section h3{
     border: 1px solid ;
 }
 #content3 .morebtn a:hover{
-    background-color: #555;
+    background-color: #af0826;
     color: #fff;
 }
 
@@ -436,4 +446,112 @@ footer .info3{
 /* flex-grow:1; */
     padding-top: 50px;
     padding-bottom: 50px;
+}
+.topbtn{
+  position: fixed;
+  /* 화면크기 변경이나 스크롤 위치에 상관없이 
+  내가 지정한 위치에 그대로 고정시키기 위해서!
+  만약 화면에서 보이지 않다면 위치값부터 주면 좋음 */
+  right: 2rem;
+  bottom: 2rem;
+  color: #000;
+  background: #fff;
+  font-size: 3rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: none;
+}
+.topbtn:hover a{
+    transform: scale(1.4);
+}
+
+/* 태블릿용 화면 미디어 쿼리 */
+@media screen and (max-width:768px){
+header .search, header nav{
+    display: none;
+}
+header .logo{
+    text-align: center;
+    width: 100%;
+    padding: 0 0 5px 0;
+}
+.headerTabletMenu {
+    display: block;
+}
+.headerTabletMenu .tmclick{
+    display: block;
+}
+#content1{
+    /* border: 1px solid blue; */
+    /* display: block; */
+    /* 위에만 해도 되지만, 중앙정렬이 안됨. */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* flex로 수직정렬 */
+    width: 100vw;
+    padding: 0;
+}
+#content1 .cont1left{
+    /* border: 1px solid blue; */
+    background: url("../img/section1_small.jpg") center no-repeat;
+} 
+#content1 .cont1right{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-left: 0;    
+}
+#content1 .cont1right .contBg{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-left: 0;    
+}
+#content2{
+    padding: 10px;
+}
+#content2 ul{
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+#content2 ul li{
+    /* border: 1px solid blue; */
+    width: 30%;
+    padding: 10px;
+}
+#content3{
+    padding: 10px;
+}
+#content3 ul{
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+#content3 ul li{
+    /* border: 1px solid blue; */
+    width: 100%;
+    padding: 11.1px;
+}
+
+#content4{
+    /* position: relative; */
+    background: url("../img/bannerbg_small.png") center no-repeat #af0826;
+    /* height: 245px; */
+    /* box-sizing: border-box; */
+    
+}
+footer .align{
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+footer .info2{
+    display: none;
+}
+
+/* footer .footerInfo{
+    display: none;
+} */
+/* footer 값 없애고 싶을 때 위 사용.*/
 }
